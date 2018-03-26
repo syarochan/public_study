@@ -781,23 +781,23 @@ RANDOM HAVOC戦略の前に現在のqueue(queue_cur)にRANDOM HAVOC戦略まで�
   - use_stackingを最大値にしたループ処理に入る。
     - swtich文で辞書型のdataがあるのであればtrueで2をたして0から16の範囲でランダムに選択される,falseなら0を選んで15を足して0から14の範囲でランダムに選択される<br>
     - 以下のパターンは全てout_bufが挿入される場所、out_bufが書き換わる場所、out_bufに挿入される値、選択されるendianはランダムである。<br>
-      0. byte単位でbit反転処理を行う
-      1. ランダムに選択された1byteのintresting valueを挿入する戦略
-      2. ランダムに選択された2byteのintresting valueをランダムに選択されたendianで挿入する戦略
-      3. ランダムに選択された4byteのintresting valueをランダムに選択されたendianで挿入する戦略
-      4. ランダムで選ばれたARITH_MAXを1byteのout_bufに減算を行う戦略
-      5. ランダムで選ばれたARITH_MAXを1byteのout_bufに加算を行う戦略
-      6. ランダムで選ばれたARITH_MAXを2byteのout_bufにランダムに選択されたendianで減算を行う戦略
-      7. ランダムで選ばれたARITH_MAXを2byteのout_bufにランダムに選択されたendianで加算を行う戦略
-      8. ランダムで選ばれたARITH_MAXを4byteのout_bufにランダムに選択されたendianで減算を行う戦略
-      9. ランダムで選ばれたARITH_MAXを4byteのout_bufにランダムに選択されたendianで加算を行う戦略
-      10. なんとなく1-255の値を使ってxor戦略
-      11. out_bufのデータをdeleteする戦略
-      12. 11と同じ
-      13. out_bufにout_buf自身を使ってコピーまたはinsert戦略
-      14. out_bufにout_buf自身を使って書き換え戦略
-      15. extrasを使ってoverwrite戦略
-      16. extrasを使ってout_bufに追加する戦略
+      0. byte単位でbit反転処理を行う<br>
+      1. ランダムに選択された1byteのintresting valueを挿入する戦略<br>
+      2. ランダムに選択された2byteのintresting valueをランダムに選択されたendianで挿入する戦略<br>
+      3. ランダムに選択された4byteのintresting valueをランダムに選択されたendianで挿入する戦略<br>
+      4. ランダムで選ばれたARITH_MAXを1byteのout_bufに減算を行う戦略<br>
+      5. ランダムで選ばれたARITH_MAXを1byteのout_bufに加算を行う戦略<br>
+      6. ランダムで選ばれたARITH_MAXを2byteのout_bufにランダムに選択されたendianで減算を行う戦略<br>
+      7. ランダムで選ばれたARITH_MAXを2byteのout_bufにランダムに選択されたendianで加算を行う戦略<br>
+      8. ランダムで選ばれたARITH_MAXを4byteのout_bufにランダムに選択されたendianで減算を行う戦略<br>
+      9. ランダムで選ばれたARITH_MAXを4byteのout_bufにランダムに選択されたendianで加算を行う戦略<br>
+      10. なんとなく1-255の値を使ってxor戦略<br>
+      11. out_bufのデータをdeleteする戦略<br>
+      12. 11と同じ<br>
+      13. out_bufにout_buf自身を使ってコピーまたはinsert戦略<br>
+      14. out_bufにout_buf自身を使って書き換え戦略<br>
+      15. extrasを使ってoverwrite戦略<br>
+      16. extrasを使ってout_bufに追加する戦略<br>
   - use_stackingループを抜けたら、common_fuzz_stuff関数を実行する<br>
   - out_bufをin_bufを使って元の値に戻す。<br>
   - havoc_queued(初期値はqueued_pathsと同じ)の値と一致しなかった時は次の処理に入る。<br>
